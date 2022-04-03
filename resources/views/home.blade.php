@@ -34,4 +34,7 @@
 
 @endif
 
+<!-- вывод пагинации -->
+{{$users->links()}}  
+
 @endsection
