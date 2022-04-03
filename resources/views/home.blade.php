@@ -2,6 +2,9 @@
 
 @section('content')
 
+<!-- Если есть что либо в $users -->
+@if(count($users))
+
 <div class="table-responsive">
     <table class="table table-hover table-striped">
         <thead>
@@ -13,38 +16,22 @@
             </tr>
         </thead>
         <tbody>
+
+
+            @foreach($users as $user)
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>saharr.k@mail.ru</td>
-                <td>+7 000 000 00 00</td>
+                <th scope="row">{{$user->id}}</th>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->phone}}</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>saharr.k@mail.ru</td>
-                <td>+7 000 000 00 00</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>saharr.k@mail.ru</td>
-                <td>+7 000 000 00 00</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>Jacob</td>
-                <td>saharr.k@mail.ru</td>
-                <td>+7 000 000 00 00</td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td>Jacob</td>
-                <td>saharr.k@mail.ru</td>
-                <td>+7 000 000 00 00</td>
-            </tr>
+            @endforeach
+
+
         </tbody>
     </table>
 </div>
+
+@endif
 
 @endsection
