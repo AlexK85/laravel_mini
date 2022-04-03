@@ -22,9 +22,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // вызовем view
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+
+// вызовем контроллер (это КЛАСС - MainController) и экшн (это МЕТОД данного класса - index)
+Route::get('/', 'MainController@index');
 
 
 // передача переменной в представлении
