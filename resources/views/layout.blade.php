@@ -23,7 +23,7 @@
 
                 <form method="get" action="{{ route('search') }}">
 
-                    <div class="form-row blok">
+                    <div class="form-row d-flex justify-content-between">
                         <div class="form-group col-md-10">
                             <input type="text" class="form-control" id="s" name="s" placeholder="Search...">
                         </div>
