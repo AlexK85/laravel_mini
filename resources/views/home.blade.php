@@ -33,7 +33,7 @@
 </div>
 
 <!-- вывод пагинации -->
-{{$users->links()}}
+{{ $users->appends(['s' => request()->s])->links() }}
 
 @else
 
