@@ -21,4 +21,19 @@ class MainController extends Controller
         return view('home', compact('users')); // подключаем вид 'home' и при помощи compact('users') передаём users
 
     }
+
+
+    // создадим ЭКШН / метод для search
+    // нам нужно получить данные из массива GET 
+    public function search(Request $request)  // из данного объекта Request мы можем получать параметры
+    {
+        $s = $request->s;  // так же только если на нативном PHP $s = $_GET['s'];
+        // dd($s);
+
+        // далее выберем пользователей
+        // where('name') это поиск по полю name
+        $users = Phonebook::where('name', 'LIKE', "%{$s}%")->orderBy('name')->paginate(10);
+
+        return view('home', compact('users'));
+    }
 }

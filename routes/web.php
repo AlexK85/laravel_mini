@@ -28,7 +28,10 @@ use Illuminate\Support\Facades\Route;
 
 
 // вызовем контроллер (это КЛАСС - MainController) и экшн (это МЕТОД данного класса - index)
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->name('home'); // добавление ->name('home') для ссылки на главную странцу
+
+// реализация поиска на сайте 
+Route::get('/search', 'MainController@search')->name('search');
 
 
 // передача переменной в представлении

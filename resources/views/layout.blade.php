@@ -21,11 +21,11 @@
         <div class="row">
             <div class="col-md-12">
 
-                <form action="">
+                <form method="get" action="{{ route('search') }}">
 
                     <div class="form-row blok">
                         <div class="form-group col-md-10">
-                            <input type="text" class="form-control" id="q" placeholder="Search...">
+                            <input type="text" class="form-control" id="s" name="s" placeholder="Search...">
                         </div>
                         <div class="form-group col-md-2">
                             <button type="submit" class="btn btn-primary btn-blok">Search</button>
